@@ -1,0 +1,59 @@
+﻿@using System.Data
+@model DataTable
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaInventario</title>
+    <link href="~/CSS/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center">
+        <form method="post">
+            <section class="contenedor">
+                <br />
+
+                <input type="text" readonly class="caja" value="Inventario" style="text-align: center" /><br /><br />
+
+
+                <input class="cajatxt2" type="text" name="Codigo" value="" id="nombre" placeholder="Insertar Codigo" style="text-align: center" />
+                <input formaction="/Home/BuscarPost" type="submit" name="btn" value="Buscar" class="form__btn4" />
+
+                <br /><br />
+               
+                      <table class="tabla">
+                          <tr>
+                              <th> Codigo </th>
+                              <th> Precio </th>
+                              <th> Piezas </th>
+                              <th> Fecha </th>
+                          </tr>
+
+                      <tbody class="table-hover">
+                          @foreach (DataRow dr in Model.Rows)
+                          {
+                              <tr title="id: @dr[0]">
+                                  <td>@dr["Codigo"]</td>
+                                  <td>@dr["Precio"]</td>
+                                  <td>@dr["Piezas"]</td>
+                                  <td>@dr["Fecha"]</td>
+                              </tr>
+                          }
+                          </tbody>
+                      </table>
+                <br />
+                <input formaction="/Home/VistaVentas" type="submit" name="btn" value="Ventas" class="form__btn3" />
+                <input formaction="/Home/VistaAltaBaja" type="submit" name="btn" value="Alta y Baja" class="form__btn3" />
+
+            </section>
+        </form>
+    </div>
+
+</body>
+</html>

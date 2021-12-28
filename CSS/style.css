@@ -1,0 +1,248 @@
+﻿
+body {
+    background: url("C:\Users\joelc\source\repos\SistemaDeVentas\back.png") fixed center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    transition: all .3s ease;
+}
+
+.contenedor {
+    width: 430px;
+    background: white;
+    padding: 40px;
+    border-radius: 3px;
+    font-family: "Swis721 Lt BT";
+    color: black;
+    text-align: center;
+    box-shadow: 5px 10px 30px #000;
+}
+
+.cajatxt {
+    width: 100%;
+    background: #e5e5e5;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: "Swis721 Lt BT";
+    font-size: 18px;
+    border: 0px solid black;
+}
+
+.cajatxt2 {
+    width: 74%;
+    background: #e5e5e5;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: "Swis721 Lt BT";
+    font-size: 18px;
+    border: 0px solid black;
+}
+
+.h2 {
+    font-size: 30px;
+    font-family: "Swis721 Lt BT";
+}
+
+.form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.form__group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 17%), 0 2px 2px 0 rgb(0 0 0 / 11%), 0 1px 5px 0 rgb(0 0 0 / 9%);
+    border-radius: 50px;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.form__btn {
+    width: 50%;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px rgb(0, 0, 0, .05);
+    padding: 8px;
+    background-image: linear-gradient( 109.6deg, rgba(62, 161, 219, 1) 11.2%, rgba(93, 52, 236, 1) 100.2%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.form__btn2 {
+    width: 25%;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px rgb(0, 0, 0, .05);
+    padding: 8px;
+    background-image: linear-gradient( 109.6deg, rgba(62, 161, 219, 1) 11.2%, rgba(93, 52, 236, 1) 100.2%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.form__btn3 {
+    width: 25%;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px rgb(0, 0, 0, .05);
+    padding: 8px;
+    background-image: linear-gradient( 109.6deg, rgba(255, 0, 0, 255) 11.2%, rgba(93, 52, 236, 1) 100.2%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.form__btn4 {
+    width: 20%;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px rgb(0, 0, 0, .05);
+    padding: 8px;
+    background-image: linear-gradient( 109.6deg, rgba(62, 161, 219, 1) 11.2%, rgba(93, 52, 236, 1) 100.2%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.caja {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0 0 0 2px rgb(0, 0, 0, .05);
+    padding: 8px;
+    background-image: linear-gradient( 109.6deg, rgba(255, 0, 0, 255) 11.2%, rgba(93, 52, 236, 1) 100.2%);
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    transition: all .3s ease;
+    align-content: center;
+   
+}
+
+
+    .form__btn:hover {
+         box-shadow: 0 0 0 3px rgb(0, 0, 0, .4);
+         transition: all .3s ease !important;
+    }
+
+    .form__btn2:hover {
+        box-shadow: 0 0 0 3px rgb(0, 0, 0, .4);
+        transition: all .3s ease !important;
+    }  
+
+    .form__btn3:hover {
+         box-shadow: 0 0 0 3px rgb(0, 0, 0, .4);
+         transition: all .3s ease !important;
+    }
+
+    .form__btn4:hover {
+         box-shadow: 0 0 0 3px rgb(0, 0, 0, .4);
+         transition: all .3s ease !important;
+    }
+
+
+
+    .cajatxt:hover {
+        box-shadow: 0 0 0 2px rgb(0, 0, 0, .3);
+        transition: all .3s ease !important;
+    }
+
+    .cajatxt2:hover {
+        box-shadow: 0 0 0 2px rgb(0, 0, 0, .3);
+        transition: all .3s ease !important;
+    }
+
+
+
+    .form__btn:active {
+        box-shadow: 0 0 0 2px rgb(0, 0, 0, .3);
+        transform: scale(.8);
+        transition: all .3s ease;
+    }
+
+    .form__btn2:active {
+        box-shadow: 0 0 0 2px rgb(0, 0, 0, .3);
+        transform: scale(.8);
+        transition: all .3s ease;
+    }
+
+    .form__btn3:active {
+         box-shadow: 0 0 0 2px rgb(0, 0, 0, .3);
+         transform: scale(.8);
+         transition: all .3s ease;
+    }
+
+    .form__btn4:active {
+         box-shadow: 0 0 0 2px rgb(0, 0, 0, .3);
+         transform: scale(.8);
+         transition: all .3s ease;
+    }
+
+
+     .tabla{
+
+        background: white;
+        border-radius: 3px;
+        border-collapse: collapse;
+        height: 140px;
+        margin: auto;
+        max-width: 600px;
+        padding: 3px;
+        width: 100%;        
+        animation: float 5s infinite;
+
+    }
+
+     th {
+    
+    background-color: #e5e5e5;
+    font-size: 15px;
+    font-weight: 100;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+     tr {
+       border-top: 1px solid #C1c3d1;
+       border-bottom: 1px solid #C1c3d1;
+       color: #666b85;
+       font-size: 15px;
+       font-weight: normal;
+    }
+
+     tr:hover td {
+            background-image: linear-gradient( 109.6deg, rgba(62, 161, 219, 1) 11.2%, rgba(62, 161, 219, 1) 100.2%);
+            color: #fff;        
+        }

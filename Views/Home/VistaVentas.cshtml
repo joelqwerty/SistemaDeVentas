@@ -1,0 +1,69 @@
+﻿@using System.Data
+@model DataTable
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaVentas</title>
+
+    <link href="~/CSS/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center">
+
+        <form method="post">
+            <section class="contenedor">
+                <br />
+
+                <input type="text" readonly class="caja" value="Ventas" style="text-align: center" /><br /><br />
+
+                <input class="cajatxt" type="text" name="Codigo" value="" id="codigo" placeholder="Inserte Codigo" style="text-align: center" /><br /><br />
+                <input class="cajatxt" type="number" name="Precio" value="" id="precio" placeholder="Inserte Precio" style="text-align: center" min="1" max="10000" /><br /><br />
+                <input class="cajatxt" type="number" name="Piezas" value="" id="piezas" placeholder="Inserte Piezas" style="text-align: center" min="1" max="10000" /><br /><br />              
+     
+
+                <input formaction="/Home/VentasPost" class="form__btn2" type="submit" name="btn" value="Vender" />
+
+                <br />
+
+                @if (TempData["Mensaje"] != null)
+                {
+                    <h3> @TempData["Mensaje"]</h3>
+                }
+
+                <table>
+                    <tr>
+                        <th> Codigo </th>
+                        <th> Precio </th>
+                        <th> Piezas </th>
+                        <th> Fecha </th>
+                    </tr>
+
+
+                    @foreach (DataRow dr in Model.Rows)
+                    {
+                        <tr title="id: @dr[0]">
+                            <td>@dr["Codigo"]</td>
+                            <td>@dr["Precio"]</td>
+                            <td>@dr["Piezas"]</td>
+                            <td>@dr["Fecha"]</td>
+                        </tr>
+                    }
+
+                </table>
+                <br />
+                <input formaction="/Home/VistaInventario"class="form__btn3" type="submit" name="btn" value="Inventario" />
+                <input formaction="/Home/VistaAltaBaja" class="form__btn3" type="submit" name="btn" value="Alta y Baja" />
+
+            </section>
+        </form>
+    </div>
+
+</body>
+</html>
