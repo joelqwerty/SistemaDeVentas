@@ -12,9 +12,8 @@ namespace SistemaDeVentas.Models
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ConnectionString);
         public void CreateInventario(string Codigo, string Precio, int Piezas)
-        {
-            
-                SqlCommand cmd = new SqlCommand($"Insert into sv values('{Codigo}','{Precio}',{Piezas},GETDATE())", con);
+        {     
+                SqlCommand cmd = new SqlCommand($"Insert into Inventario values('{Codigo}','{Precio}',{Piezas},GETDATE())", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();              
