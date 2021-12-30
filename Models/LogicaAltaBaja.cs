@@ -75,7 +75,7 @@ namespace SistemaDeVentas.Models
             
         }
 
-        public void SumarInventario(int Piezas, string Codigo)
+        public void SumarInventario(int Piezas, string Codigo) 
         {
 
                 SqlCommand cmd = new SqlCommand($"Update Inventario set Piezas = Piezas + {Piezas} where Codigo = '{Codigo}' ", con);
