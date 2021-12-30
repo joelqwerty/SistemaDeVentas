@@ -55,13 +55,10 @@ namespace SistemaDeVentas.Models
 
         public DataTable ReadInventarioAlta()
         {
-           
                 SqlDataAdapter da = new SqlDataAdapter("Select id, Codigo, Descripcion, Precio, Piezas, Fecha from Inventario", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
-          
-            
         }
 
         public void RestarInventario(int Piezas, string Codigo)
@@ -75,7 +72,7 @@ namespace SistemaDeVentas.Models
             
         }
 
-        public void SumarInventario(int Piezas, string Codigo)
+        public void SumarInventario(int Piezas, string Codigo) 
         {
 
                 SqlCommand cmd = new SqlCommand($"Update Inventario set Piezas = Piezas + {Piezas} where Codigo = '{Codigo}' ", con);
