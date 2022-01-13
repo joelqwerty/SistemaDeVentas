@@ -25,12 +25,16 @@
 
                 <input class="cajatxt" type="text" name="Codigo" value="" id="codigo" placeholder="Inserte Codigo" style="text-align: center" /><br /><br />
                 <input class="cajatxt" type="number" name="Precio" value="" id="precio" placeholder="Inserte Precio" style="text-align: center" min="1" max="10000" /><br /><br />
-                <input class="cajatxt" type="number" name="Piezas" value="" id="piezas" placeholder="Inserte Piezas" style="text-align: center" min="1" max="10000" /><br /><br />              
-     
+                <input class="cajatxt" type="number" name="Piezas" value="" id="piezas" placeholder="Inserte Piezas" style="text-align: center" min="1" max="10000" /><br /><br />
+
+                @if (TempData["MensajeCampos"] != null)
+                {
+                    <h3> @TempData["MensajeCampos"]</h3>
+                }
 
                 <input formaction="/Home/VentasPost" class="form__btn2" type="submit" name="btn" value="Vender" />
 
-                <br />
+                <br /><br />
 
                 @if (TempData["Mensaje"] != null)
                 {
@@ -58,7 +62,7 @@
 
                 </table>
                 <br />
-                <input formaction="/Home/VistaInventario"class="form__btn3" type="submit" name="btn" value="Inventario" />
+                <input formaction="/Home/VistaInventario" class="form__btn3" type="submit" name="btn" value="Inventario" />
                 <input formaction="/Home/VistaAltaBaja" class="form__btn3" type="submit" name="btn" value="Alta y Baja" />
 
             </section>

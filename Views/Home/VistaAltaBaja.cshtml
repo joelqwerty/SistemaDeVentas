@@ -25,47 +25,88 @@
 
                 <input type="text" readonly class="caja" value="Alta y Baja" style="text-align: center" /><br /><br />
 
+                @if (TempData["MensajeCampos"] != null)
+                {
+                    <h3> @TempData["MensajeCampos"]</h3>
+                }
+
+
+                @if (TempData["MensajeCamposEliminar"] != null)
+                {
+                    <h3> @TempData["MensajeCamposEliminar"]</h3>
+                }
+
+
+                @if (TempData["MensajeCamposAgregar"] != null)
+                {
+                    <h3> @TempData["MensajeCamposAgregar"]</h3>
+                }
+
+
+                @if (TempData["MensajeEliminarP"] != null)
+                {
+                    <h3> @TempData["MensajeEliminarP"]</h3>
+                }
 
                 <input type="text" class="cajatxt" name="Codigo" value="" id="nombre" placeholder="Inserte Codigo" style="text-align: center" /><br /><br />
                 <input type="text" class="cajatxt" name="Descripcion" value="" id="Descripcion" placeholder="Inserte Descripcion" style="text-align: center" /><br /><br />
-                 <input type="number" class="cajatxt" name="Precio" value="" id="Precio" placeholder="Inserte Precio" style="text-align: center" min="1" max="10000" /><br /><br />
-                    <input type="number" class="cajatxt" name="Piezas" value="" id="Piezas" placeholder="Inserte Piezas" style="text-align: center" min="1" max="10000" /><br /><br />
+                <input type="number" class="cajatxt" name="Precio" value="" id="Precio" placeholder="Inserte Precio" style="text-align: center" min="1" max="10000" /><br /><br />
+                <input type="number" class="cajatxt" name="Piezas" value="" id="Piezas" placeholder="Inserte Piezas" style="text-align: center" min="1" max="10000" /><br /><br />
 
 
-                    <input formaction="/Home/IngresarCodigo" class="form__btn" type="submit" name="btn" value="Ingresar Codigo" />
-                    <input formaction="/Home/AgregarPiezas" class="form__btn2" type="submit" name="btn" value="+" /> <br />
+                <input formaction="/Home/IngresarCodigo" class="form__btn" type="submit" name="btn" value="Ingresar Codigo" />
+                <input formaction="/Home/AgregarPiezas" class="form__btn2" type="submit" name="btn" value="+" /> <br />
 
-                    <input formaction="/Home/EliminarCodigo" class="form__btn" type="submit" name="btn" value="Eliminar Codigo" />
-                    <input formaction="/Home/EliminarPiezas" class="form__btn2" type="submit" name="btn" value="-" />
+                <input formaction="/Home/EliminarCodigo" class="form__btn" type="submit" name="btn" value="Eliminar Codigo" />
+                <input formaction="/Home/EliminarPiezas" class="form__btn2" type="submit" name="btn" value="-" />
 
-                    <br /><br />
+                <br /><br />
+                @if (TempData["Mensaje"] != null)
+                {
+                    <h3> @TempData["Mensaje"]</h3>
+                }
 
-                    <table>
-                        <tr>
-                            <th> Codigo </th>
-                            <th> Descripcion </th>
-                            <th> Precio </th>
-                            <th> Piezas </th>
-                            <th> Fecha </th>
+                @if (TempData["Mensaje2"] != null)
+                {
+                    <h3> @TempData["Mensaje2"]</h3>
+                }
+
+                @if (TempData["Mensaje3"] != null)
+                {
+                    <h3> @TempData["Mensaje3"]</h3>
+                }
+
+                @if (TempData["Mensaje4"] != null)
+                {
+                    <h3> @TempData["Mensaje4"]</h3>
+                }
+
+                <table>
+                    <tr>
+                        <th> Codigo </th>
+                        <th> Descripcion </th>
+                        <th> Precio </th>
+                        <th> Piezas </th>
+                        <th> Fecha </th>
+                    </tr>
+
+
+                    @foreach (DataRow dr in Model.Rows)
+                    {
+                        <tr title="id: @dr[0]">
+                            <td>@dr["Codigo"]</td>
+                            <td>@dr["Descripcion"]</td>
+                            <td>@dr["Precio"]</td>
+                            <td>@dr["Piezas"]</td>
+                            <td>@dr["Fecha"]</td>
                         </tr>
 
-
-                        @foreach (DataRow dr in Model.Rows)
-                        {
-                            <tr title="id: @dr[0]">
-                                <td>@dr["Codigo"]</td>
-                                <td>@dr["Descripcion"]</td>
-                                <td>@dr["Precio"]</td>
-                                <td>@dr["Piezas"]</td>
-                                <td>@dr["Fecha"]</td>
-                            </tr>
-
-                        }
-                    </table>
-                    <br />
-                    <input formaction="/Home/VistaVentas" class="form__btn3" type="submit" name="btn" value="Ventas" />
-                    <input formaction="/Home/VistaInventario" class="form__btn3" type="submit" name="btn" value="Inventario" />
-                    <br />
+                    }
+                </table>
+                <br />
+                <input formaction="/Home/VistaVentas" class="form__btn3" type="submit" name="btn" value="Ventas" />
+                <input formaction="/Home/VistaInventario" class="form__btn3" type="submit" name="btn" value="Inventario" />
+                <br />
 
             </section>
         </form>

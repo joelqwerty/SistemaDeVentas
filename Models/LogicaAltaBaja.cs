@@ -30,6 +30,34 @@ namespace SistemaDeVentas.Models
         }
 
 
+        public bool ValidarCajasVaciasAlta2(string Codigo)
+        {
+
+            bool vacio = false;
+
+            if (Codigo == "")
+            {
+                vacio = true;
+            }
+
+            return vacio;
+
+        }
+
+        public bool ValidarCajasVaciasAlta3(string Codigo, int Piezas)
+        {
+
+            bool vacio = false;
+
+            if (Codigo == "" || Piezas == 0 )
+            {
+                vacio = true;
+            }
+
+            return vacio;
+
+        }
+
 
         public void Insertar(string Codigo, string Descripcion, string Precio, int Piezas)
         {

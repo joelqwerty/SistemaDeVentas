@@ -36,5 +36,17 @@ namespace SistemaDeVentas.Models
         }
 
 
+        public bool ValidarCajasVacias(string Codigo)
+        {
+            bool vacio = false;
+            if (Codigo == "")
+            {
+                vacio = true;
+            }
+
+            return vacio;
+        }
+
+
     }
 }

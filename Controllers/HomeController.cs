@@ -41,90 +41,142 @@ namespace SistemaDeVentas.Controllers
 
         public ActionResult VentasPost(string Codigo, string Precio, int Piezas = 0)
         {
-            try
+
+
+
+            if (ven.ValidarCajasVacias(Codigo, Precio, Piezas) == true)
             {
+
+                TempData["MensajeCampos"] = "Todos los campos son obligatorios";
+
+            }
+
+            else 
+            {
+
                 ven.CreateVentas(Codigo, Precio, Piezas);
                 obj.RestarInventario(Piezas, Codigo);
                 TempData["mensaje"] = "Ultima Venta: " + Piezas + " Piezas De " + Codigo;
 
+
+            }
+           
+
                 return View("VistaVentas", ven.ReadVentas());
-            }
-            catch (Exception)
-            {
-                throw new Exception("Campos Requeridos");
-            }
+            
            
         }
 
         public ActionResult BuscarPost(string Codigo)
         {
-            try
+
+
+            if (inv.ValidarCajasVacias(Codigo) == true)
             {
-                return View("VistaInventario", inv.BuscarCodigo(Codigo));
+
+                TempData["MensajeCampos"] = "El Codigo es Obligatorio";
+
             }
-            catch (Exception)
+
+            else
             {
-                throw new Exception("Codigo requerido");
-            }          
+                inv.BuscarCodigo(Codigo);
+            }
+
+                return View("VistaInventario", inv.BuscarCodigo(Codigo));
+            
+            
         }
 
 
 
         public ActionResult IngresarCodigo(string Codigo, string Descripcion, string Precio, int Piezas = 0)
         {
-           try
-           {
-           obj.Insertar(Codigo, Descripcion, Precio, Piezas);
-           TempData["mensaje"] = "Se ingreso el Codigo " + Codigo;
-           return View("VistaAltaBaja", obj.ReadInventarioAlta());
-              }
-              catch (Exception)
-              {
 
-              throw new Exception("Codigo requerido");
-              }                                 
+            if (obj.ValidarCajasVaciasAlta(Codigo, Descripcion, Precio, Piezas) == true)
+            {
+
+                TempData["MensajeCampos"] = "Todos los campos son obligatorios";
+
+            }
+
+            else
+            {
+                obj.Insertar(Codigo, Descripcion, Precio, Piezas);
+                TempData["Mensaje"] = "Se ingreso el Codigo " + Codigo;
+            }
+
+           return View("VistaAltaBaja", obj.ReadInventarioAlta());
+                                     
         }   
 
         public ActionResult EliminarCodigo(string Codigo)
         {
-            try
+
+            if (obj.ValidarCajasVaciasAlta2(Codigo) == true)
+            {
+
+                TempData["MensajeCamposEliminar"] = "Es idispensable el codigo";
+
+            }
+
+            else
             {
                 obj.Eliminar(Codigo);
-                TempData["mensaje"] = "Se eliminó el codigo " + Codigo;
-                return View("VistaAltaBaja", obj.ReadInventarioAlta());
+                TempData["Mensaje2"] = "Se eliminó el codigo " + Codigo;
             }
-            catch (Exception)
-            {
-                throw new Exception("Codigo requerido");
-            }
+            
+                return View("VistaAltaBaja", obj.ReadInventarioAlta());         
+            
         }
 
         public ActionResult AgregarPiezas( string Codigo, int Piezas= 0)
         {
-            try
+
+            if (obj.ValidarCajasVaciasAlta3(Codigo, Piezas) == true)
+            {
+
+                TempData["MensajeCamposAgregar"] = "Los Campos son Indispensables";
+
+            }
+
+            else
             {
                 obj.SumarInventario(Piezas, Codigo);
-                TempData["mensaje"] = "Se agrego " + Piezas + "Piezas";
-                return View("VistaAltaBaja", obj.ReadInventarioAlta());
+                TempData["Mensaje3"] = "Se agrego " + Piezas + "Piezas";
+               
             }
-            catch (Exception)
-            {
-                throw new Exception("Codigo requerido");
-            }      
+
+                return View("VistaAltaBaja", obj.ReadInventarioAlta());
+             
         }
+
+
+
+
+
 
         public ActionResult EliminarPiezas(string Codigo, int Piezas = 0)
         {
-            try
+
+
+
+            if (obj.ValidarCajasVaciasAlta3(Codigo, Piezas) == true)
+            {
+
+                TempData["MensajeEliminarP"] = "Los Campos son Indispensables";
+
+            }
+
+            else
             {
                 obj.RestarInventario(Piezas, Codigo);
-                TempData["mensaje"] = "Se Eliminó" + Piezas + "Piezas";
+                TempData["Mensaje4"] = "Se Eliminó" + Piezas + "Piezas";
+
+            }
+
                 return View("VistaAltaBaja", obj.ReadInventarioAlta());
-            }
-            catch (Exception)
-            {
-                throw new Exception("Codigo requerido");
-            }
+            
         }
     }
 }
